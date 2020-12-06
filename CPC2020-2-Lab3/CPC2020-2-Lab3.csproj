@@ -58,7 +58,6 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Constants.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Program.cs" />

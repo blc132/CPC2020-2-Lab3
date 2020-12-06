@@ -59,5 +59,14 @@ namespace CPC2020_2_Lab3.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=.; database=KredekBookStoreDemo;Trusted_Connection = yes.
+        /// </summary>
+        internal static string ConnectionString {
+            get {
+                return ResourceManager.GetString("ConnectionString", resourceCulture);
+            }
+        }
     }
 }

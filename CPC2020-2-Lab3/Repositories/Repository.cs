@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using CPC2020_2_Lab3.Infrastructure;
 
 namespace CPC2020_2_Lab3.Repositories
 {
@@ -16,7 +15,7 @@ namespace CPC2020_2_Lab3.Repositories
         protected Repository()
         {
             //Inicjalizacja połączenia z bazą danych
-            Connection = new SqlConnection(Constants.ConnectionString);
+            Connection = new SqlConnection(Properties.Resources.ConnectionString);
         }
     }
 }
