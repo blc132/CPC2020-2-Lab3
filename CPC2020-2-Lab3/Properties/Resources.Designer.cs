@@ -61,7 +61,7 @@ namespace CPC2020_2_Lab3.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=.; database=KredekBookStoreDemo;Trusted_Connection = yes.
+        ///   Looks up a localized string similar to Data Source=.; Database=KredekBookStoreDemo;Trusted_Connection = yes.
         /// </summary>
         internal static string ConnectionString {
             get {

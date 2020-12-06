@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using CPC2020_2_Lab3.Repositories.Interfaces;
 
 namespace CPC2020_2_Lab3.Repositories

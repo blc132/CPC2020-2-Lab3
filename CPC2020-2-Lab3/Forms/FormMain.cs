@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using CPC2020_2_Lab3.Models;
 using CPC2020_2_Lab3.Repositories;
 
 namespace CPC2020_2_Lab3.Forms
@@ -16,16 +15,6 @@ namespace CPC2020_2_Lab3.Forms
         /// </summary>
         private readonly BooksRepository booksRepository;
 
-        /// <summary>
-        /// Klasa do przetwarzania danych związanych z tabelą Authors
-        /// </summary>
-        private readonly AuthorsRepository authorsRepository;
-
-        /// <summary>
-        /// Klasa do przetwarzania danych związanych z tabelą Genres
-        /// </summary>
-        private readonly GenresRepository genersRepository;
-
 
         /// <summary>
         /// Konstruktor okna głownego aplikacji
@@ -34,9 +23,6 @@ namespace CPC2020_2_Lab3.Forms
         {
             //Zainicjalizowanie repozytoriów
             booksRepository = new BooksRepository();
-            authorsRepository = new AuthorsRepository();
-            genersRepository = new GenresRepository();
-
             InitializeComponent();
 
             //Ustawienie okna, żeby pojawiało się na środku ekranu
@@ -149,15 +135,9 @@ namespace CPC2020_2_Lab3.Forms
             string title = row.Cells[1].Value.ToString();
             int yearOfPublication = int.Parse(row.Cells[2].Value.ToString());
             float price = float.Parse(row.Cells[3].Value.ToString());
-
-            int authorId = int.Parse(row.Cells[4].Value.ToString());
-            int genreId = int.Parse(row.Cells[5].Value.ToString());
-
-            //pobierz autora z bazy danych na podstawie wyciągniętego authorId
-            Author author = authorsRepository.GetAuthor(authorId);
-
-            //pobierz gatunek z bazy danych na podstawie wyciągniętego genreId
-            Genre genre = genersRepository.GetGenre(genreId);
+            string firstName = row.Cells[6].Value.ToString();
+            string lastName = row.Cells[7].Value.ToString();
+            string genre = row.Cells[8].Value.ToString();
 
             //poustawiaj dane w textboxach wybranej książki
             textBoxId.Text = id.ToString();
@@ -165,9 +145,9 @@ namespace CPC2020_2_Lab3.Forms
             textBoxYearOfPublication.Text = yearOfPublication.ToString();
             textBoxPrice.Text = price.ToString();
 
-            textBoxGenre.Text = genre.Name;
-            textBoxFirstName.Text = author.FirstName;
-            textBoxLastName.Text = author.LastName;
+            textBoxGenre.Text = genre;
+            textBoxFirstName.Text = firstName;
+            textBoxLastName.Text = lastName;
 
             labelLastAction.Text = "Wybrano książkę";
         }
@@ -185,6 +165,9 @@ namespace CPC2020_2_Lab3.Forms
             dataGridViewBooks.Columns["Title"].HeaderText = "Tytuł";
             dataGridViewBooks.Columns["YearOfPublish"].HeaderText = "Data publikacji";
             dataGridViewBooks.Columns["Price"].HeaderText = "Cena";
+            dataGridViewBooks.Columns["FirstName"].HeaderText = "Imię";
+            dataGridViewBooks.Columns["LastName"].HeaderText = "Nazwisko";
+            dataGridViewBooks.Columns["Name"].HeaderText = "Gatuenk";
         }
 
         /// <summary>
