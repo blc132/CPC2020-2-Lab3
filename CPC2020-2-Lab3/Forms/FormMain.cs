@@ -68,12 +68,6 @@ namespace CPC2020_2_Lab3.Forms
         /// <param name="e"></param>
         private void buttonDeleteBook_Click(object sender, EventArgs e)
         {
-            //wyciągnięcie bookId z textboxu
-            int bookId = int.Parse(textBoxId.Text);
-
-            //usunięcie książki z bazy danych
-            booksRepository.DeleteBook(bookId);
-
             RefreshDataGridViewBooks();
             ClearTextBoxes();
             labelLastAction.Text = "Usunięto książkę";

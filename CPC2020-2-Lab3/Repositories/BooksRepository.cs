@@ -60,14 +60,7 @@ namespace CPC2020_2_Lab3.Repositories
         /// <param name="bookId"></param>
         public void DeleteBook(int bookId)
         {
-            string queryDeleteBook = "DELETE FROM Books WHERE Id=" + bookId;
-
-            Connection.Open();
-
-            SqlCommand commandDeleteBook = new SqlCommand(queryDeleteBook, Connection);
-            commandDeleteBook.ExecuteNonQuery();
-
-            Connection.Close();
+            throw new NotImplementedException();
         }
 
         /// <summary>
