@@ -87,18 +87,6 @@ namespace CPC2020_2_Lab3.Forms
         /// <param name="e"></param>
         private void buttonEditBook_Click(object sender, EventArgs e)
         {
-            //wyciągnięcie danych z textboxów
-            int bookId = int.Parse(textBoxId.Text);
-            string title = textBoxBookTitle.Text;
-            int yearOfPublication = int.Parse(textBoxYearOfPublication.Text);
-            float price = float.Parse(textBoxPrice.Text);
-            string genre = textBoxGenre.Text;
-            string authorFirstName = textBoxFirstName.Text;
-            string authorLastName = textBoxLastName.Text;
-
-            //aktualizacja książki
-            booksRepository.UpdateBook(bookId, title, yearOfPublication, price, genre, authorFirstName, authorLastName);
-
             RefreshDataGridViewBooks();
             ClearTextBoxes();
             labelLastAction.Text = "Edytowano książkę";

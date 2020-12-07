@@ -40,6 +40,6 @@ namespace CPC2020_2_Lab3.Repositories.Interfaces
         /// <param name="genre"></param>
         /// <param name="authorFirstName"></param>
         /// <param name="authorLastName"></param>
-        void UpdateBook(int bookId, string title, int yearOfPublish, float price, string genre, string authorFirstName, string authorLastName);
+        void EditBook(int bookId, string title, int yearOfPublish, float price, string genre, string authorFirstName, string authorLastName);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using CPC2020_2_Lab3.Repositories.Interfaces;
 
@@ -70,7 +71,7 @@ namespace CPC2020_2_Lab3.Repositories
         }
 
         /// <summary>
-        /// Metoda aktualizująca książkę z tabeli Books
+        /// Metoda edytująca książkę z tabeli Books
         /// </summary>
         /// <param name="bookId"></param>
         /// <param name="title"></param>
@@ -79,25 +80,9 @@ namespace CPC2020_2_Lab3.Repositories
         /// <param name="genre"></param>
         /// <param name="authorFirstName"></param>
         /// <param name="authorLastName"></param>
-        public void UpdateBook(int bookId, string title, int yearOfPublish, float price, string genre, string authorFirstName, string authorLastName)
+        public void EditBook(int bookId, string title, int yearOfPublish, float price, string genre, string authorFirstName, string authorLastName)
         {
-            string queryGetAuthorId = "SELECT Id FROM Authors WHERE FirstName='" + authorFirstName + "' AND LastName='" + authorLastName + "';";
-            string queryGetGenreId = "SELECT Id from Genres WHERE Name='" + genre + "';";
-
-            Connection.Open();
-
-            SqlCommand commandGetAuthorId = new SqlCommand(queryGetAuthorId, Connection);
-            int authorId = (int)commandGetAuthorId.ExecuteScalar();
-
-            SqlCommand commandGetGenreId = new SqlCommand(queryGetGenreId, Connection);
-            int genreId = (int)commandGetGenreId.ExecuteScalar();
-
-
-            string updateBookQuery = "UPDATE Books SET Title='" + title + "',YearOfPublish=" + yearOfPublish + ", Price=" + price + ", AuthorId=" + authorId + ", GenreId=" + genreId + " WHERE Id=" + bookId + ";";
-            SqlCommand commandInsertBook = new SqlCommand(updateBookQuery, Connection);
-            commandInsertBook.ExecuteNonQuery();
-
-            Connection.Close();
+            throw new NotImplementedException();
         }
     }
 }
