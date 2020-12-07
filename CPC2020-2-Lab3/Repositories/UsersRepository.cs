@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using System;
 using CPC2020_2_Lab3.Repositories.Interfaces;
 
 namespace CPC2020_2_Lab3.Repositories
@@ -16,18 +16,7 @@ namespace CPC2020_2_Lab3.Repositories
         /// <returns></returns>
         public bool Login(string login, string password)
         {
-            string query = "SELECT COUNT(*) FROM Users WHERE Login='" + login + "' AND Password='" + password + "';";
-
-            Connection.Open();
-
-            SqlCommand comm = new SqlCommand(query, Connection);
-            int foundUsers = (int)comm.ExecuteScalar();
-
-            Connection.Close();
-
-            if (foundUsers >= 1)
-                return true;
-            return false;
+            throw new NotImplementedException();
         }
     }
 }

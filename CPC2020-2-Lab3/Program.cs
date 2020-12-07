@@ -17,10 +17,10 @@ namespace CPC2020_2_Lab3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FormLogin());
+            // Application.Run(new FormLogin());
 
             //jeśli udało się zalogować uruchom główne okno, inaczej zakończ działanie programu
-            if(Logged)
+            // if(Logged)
                 Application.Run(new FormMain());
         }
     }
