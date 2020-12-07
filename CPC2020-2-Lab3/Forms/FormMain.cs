@@ -93,33 +93,6 @@ namespace CPC2020_2_Lab3.Forms
         /// <param name="e"></param>
         private void dataGridViewBooks_SelectionChanged(object sender, EventArgs e)
         {
-            //Jeśli żadnen wiersz nie jest zaznaczony lub jest zaznaczonych więcej niż jeden to nic nie rób (return)
-            int rowsCount = dataGridViewBooks.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1)
-                return;
-
-            //weź pierwszy zaznaczony wiersz
-            DataGridViewRow row = dataGridViewBooks.SelectedRows[0];
-
-            //wyciągnij dane z zaznaczonego wiersza
-            int id = int.Parse(row.Cells[0].Value.ToString());
-            string title = row.Cells[1].Value.ToString();
-            int yearOfPublication = int.Parse(row.Cells[2].Value.ToString());
-            float price = float.Parse(row.Cells[3].Value.ToString());
-            string firstName = row.Cells[6].Value.ToString();
-            string lastName = row.Cells[7].Value.ToString();
-            string genre = row.Cells[8].Value.ToString();
-
-            //poustawiaj dane w textboxach wybranej książki
-            textBoxId.Text = id.ToString();
-            textBoxBookTitle.Text = title;
-            textBoxYearOfPublication.Text = yearOfPublication.ToString();
-            textBoxPrice.Text = price.ToString();
-
-            textBoxGenre.Text = genre;
-            textBoxFirstName.Text = firstName;
-            textBoxLastName.Text = lastName;
-
             labelLastAction.Text = "Wybrano książkę";
         }
 
