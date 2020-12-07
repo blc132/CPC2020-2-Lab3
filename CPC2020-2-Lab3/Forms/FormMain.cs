@@ -101,17 +101,6 @@ namespace CPC2020_2_Lab3.Forms
         /// </summary>
         private void CustomizeDataGridViewBooks()
         {
-            //ustaw widoczność kolumn AuthorId i GenreId na niewidoczne
-            dataGridViewBooks.Columns["AuthorId"].Visible = false;
-            dataGridViewBooks.Columns["GenreId"].Visible = false;
-
-            //ustaw nazwy kolumn na polskie
-            dataGridViewBooks.Columns["Title"].HeaderText = "Tytuł";
-            dataGridViewBooks.Columns["YearOfPublish"].HeaderText = "Data publikacji";
-            dataGridViewBooks.Columns["Price"].HeaderText = "Cena";
-            dataGridViewBooks.Columns["FirstName"].HeaderText = "Imię";
-            dataGridViewBooks.Columns["LastName"].HeaderText = "Nazwisko";
-            dataGridViewBooks.Columns["Name"].HeaderText = "Gatuenk";
         }
 
         /// <summary>
