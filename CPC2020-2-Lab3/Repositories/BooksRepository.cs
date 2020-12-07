@@ -35,23 +35,7 @@ namespace CPC2020_2_Lab3.Repositories
         /// <param name="authorLastName"></param>
         public void AddBook(string title, int yearOfPublish, float price, string genre, string authorFirstName, string authorLastName)
         {
-            string queryGetAuthorId = "SELECT Id FROM Authors WHERE FirstName='" + authorFirstName + "' AND LastName='" + authorLastName + "';";
-            string queryGetGenreId = "SELECT Id from Genres WHERE Name='" + genre + "';";
-
-            Connection.Open();
-
-            SqlCommand commandGetAuthorId = new SqlCommand(queryGetAuthorId, Connection);
-            int authorId = (int)commandGetAuthorId.ExecuteScalar();
-
-            SqlCommand commandGetGenreId = new SqlCommand(queryGetGenreId, Connection);
-            int genreId = (int)commandGetGenreId.ExecuteScalar();
-
-
-            string insertBookQuery = "INSERT INTO Books VALUES ('" + title + "'," + yearOfPublish + "," + price + "," + authorId + "," + genreId + ");";
-            SqlCommand commandInsertBook = new SqlCommand(insertBookQuery, Connection);
-            commandInsertBook.ExecuteNonQuery();
-
-            Connection.Close();
+            throw new NotImplementedException();
         }
 
         /// <summary>
