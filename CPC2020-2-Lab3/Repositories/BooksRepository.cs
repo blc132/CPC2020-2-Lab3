@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using CPC2020_2_Lab3.Repositories.Interfaces;
 
 namespace CPC2020_2_Lab3.Repositories
@@ -16,12 +15,7 @@ namespace CPC2020_2_Lab3.Repositories
         /// <returns></returns>
         public DataTable GetBooks()
         {
-            string query = "SELECT Books.*, Authors.FirstName, Authors.LastName, Genres.Name FROM Books JOIN Authors ON Books.AuthorId = Authors.Id JOIN Genres ON Books.GenreId = Genres.Id; ";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, Connection);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            return table;
+            throw new NotImplementedException();
         }
 
         /// <summary>

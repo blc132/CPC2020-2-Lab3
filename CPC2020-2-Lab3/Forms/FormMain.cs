@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-using CPC2020_2_Lab3.Repositories;
 
 namespace CPC2020_2_Lab3.Forms
 {
@@ -11,18 +9,10 @@ namespace CPC2020_2_Lab3.Forms
     public partial class FormMain : Form
     {
         /// <summary>
-        /// Klasa do przetwarzania danych związanych z tabelą Books
-        /// </summary>
-        private readonly BooksRepository booksRepository;
-
-
-        /// <summary>
         /// Konstruktor okna głownego aplikacji
         /// </summary>
         public FormMain()
         {
-            //Zainicjalizowanie repozytoriów
-            booksRepository = new BooksRepository();
             InitializeComponent();
 
             //Ustawienie okna, żeby pojawiało się na środku ekranu
@@ -117,17 +107,11 @@ namespace CPC2020_2_Lab3.Forms
             textBoxLastName.Text = "";
         }
 
-
         /// <summary>
         /// Metoda odświeżająca dane w DataGridViewBooks
         /// </summary>
         private void RefreshDataGridViewBooks()
         {
-            //pobierz wszystkie książki z bazy danych
-            DataTable books = booksRepository.GetBooks();
-
-            //przypisz wszystkie książki do DataGridViewBooks
-            dataGridViewBooks.DataSource = books;
         }
     }
 }
